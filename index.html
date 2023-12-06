@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+
+		<title>Hello React!</title>
+	</head>
+
+	<body>
+		<div id="react-container">
+			Hola
+		</div>
+
+		<script src="https://unpkg.com/react@16.3.1/umd/react.production.min.js"></script>
+		<script src="https://unpkg.com/react-dom@16.3.1/umd/react-dom.production.min.js"></script>
+		<script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+		<script type="text/babel">
+
+      function Header() {
+        return (<div>
+            <h1>La maison jungle</h1>
+        </div>)
+      }
+
+      function Description() {
+          return (<p>Ici achetez toutes les plantes dont vous avez toujours rêvé 🌵🌱🎍</p>)
+      }
+
+      function Banner() {
+          return (<div>
+              <Header />
+              <Description />
+          </div>)
+      }
+
+      ReactDOM.render(<Banner />, document.getElementById("react-container"))
+
+		</script>
+	</body>
+</html>
