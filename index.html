@@ -7,7 +7,7 @@
 	</head>
 
 	<body>
-		<div id="react-container">
+		<div id="root">
 			Hola
 		</div>
 
@@ -16,24 +16,27 @@
 		<script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
 		<script type="text/babel">
 
-      function Header() {
-        return (<div>
-            <h1>La maison jungle</h1>
-        </div>)
-      }
+      		function Banner() {
+			const title = "La maison jungle"
+  			return (<h1>{title.toUpperCase()}</h1>)
+		}
 
-      function Description() {
-          return (<p>Ici achetez toutes les plantes dont vous avez toujours rêvé 🌵🌱🎍</p>)
-      }
+		function Cart() {
+			const monsteraPrice = 8
+			const ivyPrice = 10
+			const flowerPrice = 15
+			return (<div>
+    				<h2>Panier</h2>
+    				<ul>
+    				<li>Monstera : {monsteraPrice}€</li>
+    				<li>Lierre : {ivyPrice}€</li>
+     				<li>Fleurs : {flowerPrice}€</li>
+   				 </ul>
+      				Total : {monsteraPrice + ivyPrice + flowerPrice }€
+     				</div>)
+		}
 
-      function Banner() {
-          return (<div>
-              <Header />
-              <Description />
-          </div>)
-      }
-
-      ReactDOM.render(<Banner />, document.getElementById("react-container"))
+		ReactDOM.render(<div><Banner /><Cart /></div>, document.getElementById('root'))
 
 		</script>
 	</body>
